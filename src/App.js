@@ -30,19 +30,6 @@ function App() {
     return () => cancel();
   }, [pageSize]);
 
-  // useEffect(() => {
-  //   var options = {
-  //     root: null,
-  //     rootMargin: "20px",
-  //     threshold: 1.0,
-  //   };
-  //   // initialize IntersectionObserver
-  //   // and attaching to the div with ref loader
-  //   const observer = new IntersectionObserver(handleObserver, options);
-  //   if (loader.current) {
-  //     observer.observe(loader.current);
-  //   }
-  // });
   const lastEle = useCallback(node => {
     if(loading) return;
     if(loader.current) loader.current.disconnect();
@@ -54,14 +41,6 @@ function App() {
   if(node) loader.current.observe(node);
   }, [data, loading]);
 
-  // here we handle what happens when user scrolls to div with ref loader
-  // in this case we just update pageSize variable
-  // const handleObserver = (entities) => {
-  //   const target = entities[0];
-  //   if (target.isIntersecting) {
-  //     setPageSize((pageSize) => pageSize + 1000);
-  //   }
-  // };
 
   const handleFilter = (e) => {
     e.preventDefault();
