@@ -57,7 +57,6 @@ function App() {
     setFilteredData(filteredDatas);
   };
   const tableData = currentVal ? filteredData : data;
-  console.log(data.length, pageSize);
   return (
     <div className="App p-20">
       {loading ? (
